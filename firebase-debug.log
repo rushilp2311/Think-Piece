@@ -1,0 +1,36 @@
+[debug] [2020-08-31T22:25:35.439Z] ----------------------------------------------------------------------
+[debug] [2020-08-31T22:25:35.448Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-08-31T22:25:35.449Z] CLI Version:   8.9.2
+[debug] [2020-08-31T22:25:35.449Z] Platform:      linux
+[debug] [2020-08-31T22:25:35.450Z] Node Version:  v12.18.3
+[debug] [2020-08-31T22:25:35.451Z] Time:          Mon Aug 31 2020 18:25:35 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-08-31T22:25:35.451Z] ----------------------------------------------------------------------
+[debug] [2020-08-31T22:25:35.452Z] 
+[debug] [2020-08-31T22:25:35.571Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-31T22:25:35.573Z] > authorizing via signed-in user
+[debug] [2020-08-31T22:25:35.574Z] [iam] checking project think-piece-d4578 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-08-31T22:25:35.584Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/think-piece-d4578:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2020-08-31T22:26:17.851Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 Aug 2020 22:26:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=175","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-31T22:26:17.858Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/think-piece-d4578/serviceAccounts/think-piece-d4578@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-08-31T22:26:47.889Z] [functions] service account IAM check errored, deploy may fail: Server Error. getaddrinfo EAI_AGAIN iam.googleapis.com {"name":"FirebaseError","children":[],"exit":2,"message":"Server Error. getaddrinfo EAI_AGAIN iam.googleapis.com","original":{"errno":"EAI_AGAIN","code":"EAI_AGAIN","syscall":"getaddrinfo","hostname":"iam.googleapis.com"},"status":500}
+[debug] [2020-08-31T22:26:47.895Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/think-piece-d4578  
+ 
+[debug] [2020-08-31T22:27:17.923Z] Server Error. getaddrinfo EAI_AGAIN firebase.googleapis.com
+[debug] [2020-08-31T22:27:37.957Z] FirebaseError: Server Error. getaddrinfo EAI_AGAIN firebase.googleapis.com
+    at Request._callback (/usr/lib/node_modules/firebase-tools/lib/api.js:32:31)
+    at self.callback (/usr/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Request.onRequestError (/usr/lib/node_modules/firebase-tools/node_modules/request/request.js:877:8)
+    at ClientRequest.emit (events.js:327:22)
+    at ClientRequest.EventEmitter.emit (domain.js:483:12)
+    at TLSSocket.socketErrorListener (_http_client.js:426:9)
+    at TLSSocket.emit (events.js:315:20)
+    at TLSSocket.EventEmitter.emit (domain.js:483:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project think-piece-d4578. Please make sure the project exists and your account has permission to access it.
