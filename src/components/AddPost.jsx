@@ -40,23 +40,26 @@ class AddPost extends Component {
   render() {
     const { title, content } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} className="AddPost">
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={title}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          name="content"
-          placeholder="Body"
-          value={content}
-          onChange={this.handleChange}
-        />
-        <input className="create" type="submit" value="Create Post" />
-      </form>
+      <React.Fragment>
+        <h1 style={{ textAlign: "center" }}>Add a Post</h1>
+        <form onSubmit={this.handleSubmit} className="AddPost">
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="content"
+            placeholder="Body"
+            value={content}
+            onChange={this.handleChange}
+          />
+          <input className="create" type="submit" value="Create Post" />
+        </form>
+      </React.Fragment>
     );
   }
 }

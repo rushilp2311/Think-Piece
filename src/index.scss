@@ -1,12 +1,14 @@
-$input-color: #7dbbc3;
-$button-color: #f4b9b2;
-$info-color: #daedbd;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$input-color: #5f4b66;
+$button-color: #a7adc6;
+$info-color: #56667a;
 $comment-highlight-color: #de6b48;
-$danger-color: #de6b48;
+$danger-color: #d00000;
 
 @mixin button($color) {
   background-color: $color;
   border: 1px solid darken($color, 10);
+  border-radius: 5px;
   &:hover {
     background-color: lighten($color, 10);
   }
@@ -15,12 +17,14 @@ $danger-color: #de6b48;
   }
 }
 
+
 html,
 *,
 *:before,
 *:after {
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  color: #2d3436;
+  color: #2c1320;
 }
 
 html,
@@ -41,24 +45,28 @@ button {
   }
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   border: none;
   border-bottom: 1px solid $input-color;
+  
   font-size: 1.5em;
   padding: 0.5em;
 }
 
 button,
-input[type='submit'],
+input[type="submit"],
 .button {
   display: block;
   width: 100%;
   font-size: 1.1em;
   padding: 0.5em;
+  color: white;
   @include button($button-color);
-  &.star, &.create, &.update {
+  &.star,
+  &.create,
+  &.update {
     @include button($input-color);
   }
   &.delete {
@@ -78,6 +86,7 @@ input[type="file"] {
 
 %authentication {
   border: 1px solid $input-color;
+  border-radius: 10px;
   padding: 1em;
   margin-bottom: 1em;
   h2 {
@@ -107,19 +116,20 @@ input[type="file"] {
   img {
     flex: 1;
     margin-right: 1em;
-    max-height: 150px;
+    max-height: 100px;
+    border-radius: 50%;
   }
   h2 {
     margin-bottom: 1em;
   }
   .created-at:before {
-    content: 'Joined';
+    content: "Joined";
     color: $comment-highlight-color;
     font-weight: bold;
     margin: 0.5em 0.5em;
   }
   .email:before {
-    content: 'Email';
+    content: "Email";
     color: $comment-highlight-color;
     font-weight: bold;
     margin: 0.5em 0.5em;
@@ -147,6 +157,7 @@ input[type="file"] {
 
 .Post {
   border: 1px solid $input-color;
+  border-radius: 10px;
   margin-bottom: 1em;
 }
 
@@ -160,19 +171,24 @@ input[type="file"] {
 .Post--meta {
   padding: 0.5em;
   background-color: $info-color;
+  border-radius: 0px 0px 11px 11px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   p {
     display: inline-block;
+    color: white;
     margin: 1em;
   }
   button {
     display: inline-block;
-    width: auto;
+    width: 100px;
+    border-radius: 5px;
+    color: white;
     &:not(:last-child) {
       margin-right: 5px;
-      margin-bottom: 0;
+      margin-bottom: 12px;
     }
   }
 }
@@ -185,13 +201,17 @@ input[type="file"] {
   color: $comment-highlight-color;
   font-weight: bold;
   &:after {
-    content: ': ';
+    content: ": ";
   }
 }
 
 .Comment--timestamp {
   color: darken($info-color, 40);
   &:before {
-    content: ' ';
+    content: " ";
   }
+}
+
+body {
+  background-color: #f2e9e4;
 }
